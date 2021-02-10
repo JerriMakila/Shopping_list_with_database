@@ -14,7 +14,7 @@ export default function App() {
     db.transaction(tx => {
       tx.executeSql('CREATE TABLE IF NOT EXISTS shoppinglist (id integer primary key not null, product text, amount text);');
     }, null, updateList);
-  })
+  }, []);
 
   const addItem = () => {
     db.transaction(tx => {
